@@ -1,3 +1,15 @@
+// Wait for the page to load
+window.addEventListener('load', function() {
+    // Fade out the loader
+    gsap.to('#loader-container', { opacity: 0, duration: 1, onComplete: removeLoader });
+});
+
+function removeLoader() {
+    // Remove the loader element from the DOM
+    document.getElementById('loader-container').style.display = 'none';
+}
+
+
 function loco() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -376,7 +388,7 @@ gsap.to("#page6>h1>span", {
         start: `top bottom`,
         end: `bottom top`,
         scroller: `#main`,
-        scrub: .5
+        scrub: 3
     },
     stagger: .2,
     color: `#fff`
@@ -556,7 +568,7 @@ function canvas2() {
         snap: "frame",
         ease: `none`,
         scrollTrigger: {
-            scrub: .5,
+            scrub: 3,
             trigger: `#page7`,
             start: `top top`,
             end: `250% top`,
@@ -619,7 +631,7 @@ gsap.to(".page7-innercir", {
         start: `top center`,
         end: `bottom top`,
         scroller: `#main`,
-        scrub: .5
+        scrub: 3
     },
     backgroundColor: `#0a3bce91`,
 })
@@ -739,7 +751,7 @@ function canvas3() {
         snap: "frame",
         ease: `none`,
         scrollTrigger: {
-            scrub: .5,
+            scrub: 3,
             trigger: `#page11`,
             start: `top top`,
             end: `250% top`,
@@ -780,7 +792,7 @@ function canvas3() {
         pin: true,
         scroller: `#main`,
         start: `top top`,
-        end: `250% top`,
+        end: `250% top`
     });
 }
 canvas3();
